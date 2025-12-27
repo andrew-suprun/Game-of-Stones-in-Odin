@@ -5,7 +5,7 @@ Heap :: struct($E: typeid, $N: int) {
 	len:   int,
 }
 
-add :: proc(heap: ^Heap($E, $N), item: E, less: proc(_: int, _: int) -> bool) {
+add :: proc(heap: ^Heap($E, $N), item: E, less: proc(_: E, _: E) -> bool) {
 	if heap.len == N {
 		if !less(heap.items[0], item) {
 			return

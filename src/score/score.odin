@@ -36,4 +36,9 @@ scores :: proc(t: ^testing.T) {
 	testing.expect(t, is_set(draw))
 	testing.expect(t, !is_set(no_score))
 	testing.expect(t, !is_set(win + loss))
+	testing.expect(t, is_decisive(win))
+	testing.expect(t, is_decisive(loss))
+	testing.expect(t, is_decisive(draw))
+	testing.expect(t, !is_decisive(0.0))
+	testing.expect(t, !is_decisive(no_score))
 }
